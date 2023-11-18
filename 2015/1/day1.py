@@ -14,8 +14,12 @@ def parseInput(input:str):
     return floor
 
 def main():
-    f = open("1/input")
-    ic(parseInput(f.read()))
-
+    try:
+        with open("input") as f:
+            ic(parseInput(f.read()))
+    except FileNotFoundError:
+        print("File not found.")
+    except IOError:
+        print("Error reading the file.")
 if __name__ == "__main__":
     main()   
