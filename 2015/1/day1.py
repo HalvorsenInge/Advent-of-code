@@ -1,14 +1,21 @@
+from icecream import ic
+
 def parseInput(input:str):
     floor = 0
     for characther in input:
         if characther == '(':
-            ++floor
+            ic("incremnent floor")
+            floor += 1
         elif characther == ')':
-            --floor
+            ic("decrement floor")
+            floor -= 1
         else:
             print("Invalid char")
     return floor
 
-if "__name__" == "__main__":
-    #day1()
-    pass
+def main():
+    f = open("1.1/input")
+    ic(parseInput(f.read()))
+
+if __name__ == "__main__":
+    main()   
